@@ -8,5 +8,9 @@ public class BankAccountApp {
     savings1.showInfo();
     System.out.println("***************************************************************");
     checking1.showInfo();
+
+    savings1.deposit(1000);
+    savings1.withdraw(254);
+    savings1.transfer("Mom", 323);
     }
 }
