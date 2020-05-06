@@ -17,7 +17,8 @@ public abstract class Account implements IBaseRate {
         index++;
         this.accountNumber = setAccountNumber();
     }
-    //Set account number
+    //Set account number (Starts with 1 for savings, 2 for checking; last two digits of SSN,
+    // unique 5 digit number and random 3 digit number
     private String setAccountNumber(){
         String lastTwoOfSSN = ssn.substring(ssn.length()-2, ssn.length());
         int uniqueID = index;

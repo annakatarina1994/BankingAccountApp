@@ -6,7 +6,7 @@ public class BankAccountApp {
 	Checking checking1 = new Checking("John Johnson", "115236565", 1500);
     Savings savings1 = new Savings("Robert Roberts", "844985999", 2550);
     savings1.showInfo();
-    System.out.println("*********************");
+    System.out.println("***************************************************************");
     checking1.showInfo();
     }
 }

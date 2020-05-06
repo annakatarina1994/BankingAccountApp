@@ -7,10 +7,19 @@ public class Checking extends Account {
     public Checking(String name, String ssn, double initDeposit){
         super(name, ssn, initDeposit);
         accountNumber = 2 + accountNumber;
+        setDebitCardNumber();
+    }
+
+    private void setDebitCardNumber(){
+        debitCardNumber = (int) (Math.random() * Math.pow(10, 12));
+        debitCardPin = (int) (Math.random() * Math.pow(10, 4));
     }
 
     public void showInfo(){
-        super.showInfo();
         System.out.println("ACCOUNT TYPE: Checking");
+        super.showInfo();
+        System.out.println("Checking Account Features: " +
+                "\n     Debit Card Number: " + debitCardNumber +
+                "\n     Debit Card PIN: " + debitCardPin);
     }
 }
