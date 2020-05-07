@@ -1,5 +1,8 @@
 package com.practice;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public abstract class Account implements IBaseRate {
 
     private String name;
@@ -54,14 +57,16 @@ public abstract class Account implements IBaseRate {
         printBalance();
     }
 
+    NumberFormat formatter = new DecimalFormat("#0.00");
+
     public void printBalance(){
-        System.out.println("Your balance is now: $" + balance);
+        System.out.println("Your balance is now: $" + formatter.format(balance));
     }
 
     public void showInfo(){
         System.out.println("NAME: " + name +
                 "\nACCOUNT NUMBER: " + accountNumber +
-                "\nBALANCE: " + balance +
+                "\nBALANCE: $" + formatter.format(balance) +
                 "\nRATE: " + rate + "%");
     }
 }
