@@ -2,12 +2,12 @@ package com.practice;
 
 public abstract class Account implements IBaseRate {
 
-    String name;
-    String ssn;
-    double balance;
-    static int index = 10000;
-    String accountNumber;
-    double rate;
+    private String name;
+    private String ssn;
+    private double balance;
+    private static int index = 10000;
+    protected String accountNumber;
+    protected double rate;
 
     // Constructor to set base properties and initialize the account
     public Account(String name, String ssn, double initDeposit){
@@ -28,6 +28,12 @@ public abstract class Account implements IBaseRate {
         int uniqueID = index;
         int randomNumber = (int) (Math.random() * Math.pow(10, 3));
         return lastTwoOfSSN + uniqueID + randomNumber;
+    }
+
+    public void compound(){
+        double accruedInterest = balance * (rate / 100);
+        balance = balance + accruedInterest;
+        System.out.println("Accured Interest: $" + accruedInterest);
     }
 
     public void deposit(double depositAmount){
